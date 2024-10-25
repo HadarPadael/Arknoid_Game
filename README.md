@@ -65,6 +65,7 @@ This command sets the classpath to include both the main game JAR file and the b
 #### Project Structure
 The Arknoid game project is organized into various packages, each responsible for different components of the game. Below is an overview of the directory structure and the role of each package:
 
+```bash
 ├── bin/                      # Compiled .class files (generated after build)
 ├── dist/                     # Contains the final JAR file (arknoid-game.jar)
 ├── src/                      # Source directory containing all the Java files
@@ -118,7 +119,7 @@ The Arknoid game project is organized into various packages, each responsible fo
 ├── biuoop-1.4.jar            # External library for GUI and input handling
 ├── build.xml                 # Ant build file for compiling and packaging the project
 └── README.md                 # Project README file
-
+```
 ---
 #### Key Components
 - **Animation:** This package handles the game's animations, including running the game, displaying countdowns, pausing the game, and managing keypress events.
