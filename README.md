@@ -38,8 +38,8 @@ To run the Arknoid game, you need the following:
 - **Download the game:** Download or clone the repository containing the Arknoid game.
   You should have the following files:
 
-    -- **dist/arknoid-game.jar:** The main JAR file for the game.
-    -- **biuoop-1.4.jar:** The external library required to run the game’s graphical interface.
+/t- **dist/arknoid-game.jar:** The main JAR file for the game.
+/t- **biuoop-1.4.jar:** The external library required to run the game’s graphical interface.
 
 ---
 ### Running the Game:
