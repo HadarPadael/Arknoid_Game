@@ -36,7 +36,7 @@ To run the Arknoid game, you need the following:
 
 - **Java Runtime Environment (JRE) version 8 or later:** Required to run the game. You can download it from Oracle's official site.
 - **Download the game:** Download or clone the repository containing the Arknoid game.
-- You should have the following files:
+  You should have the following files:
 
 - **dist/arknoid-game.jar:** The main JAR file for the game.
 - **biuoop-1.4.jar:** The external library required to run the game’s graphical interface.
