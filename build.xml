@@ -1,0 +1,51 @@
+<project default="compile">
+
+    <!-- Define properties for classpath and jar file -->
+    <property name="classpath" value="bin:biuoop-1.4.jar" />
+    <property name="jarfile" value="dist/arknoid-game.jar" />
+
+    <!-- Compile all java files under `src`, and export .class files into `bin` -->
+    <target name="compile">
+        <mkdir dir="bin"/>
+        <javac classpath="${classpath}" srcdir="src" destdir="bin" includeantruntime="false"/>
+    </target>
+
+    <!-- Clean target to delete compiled files -->
+    <target name="clean">
+        <delete dir="bin"/>
+        <delete dir="dist"/>
+    </target>
+
+    <!-- Target to create the JAR file -->
+    <target name="jar" depends="compile">
+        <!-- Create the `dist` directory to store the JAR -->
+        <mkdir dir="dist"/>
+
+        <!-- Package all compiled classes into a JAR file -->
+        <jar destfile="${jarfile}" basedir="bin">
+            <!-- Add manifest to specify the main class -->
+            <manifest>
+                <attribute name="Main-Class" value="Game" />
+            </manifest>
+        </jar>
+
+        <!-- Copy dependencies (like biuoop-1.4.jar) to the dist directory -->
+        <copy file="biuoop-1.4.jar" todir="dist"/>
+    </target>
+
+    <!-- Run the game by running the compiled classes -->
+    <target name="run" depends="compile">
+        <java classname="Game" classpath="${classpath}" fork="true">
+            <arg line="${args}"/>
+        </java>
+    </target>
+
+    <!-- Run the game from the JAR file with the classpath including external dependencies -->
+    <target name="run-jar" depends="jar">
+        <!-- Run the JAR and include external libraries in the classpath -->
+        <java fork="true" classname="Game" classpath="${jarfile}:dist/biuoop-1.4.jar">
+            <arg line="${args}"/>
+        </java>
+    </target>
+
+</project>
